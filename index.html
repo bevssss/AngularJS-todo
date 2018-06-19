@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app>
+<head>
+  <title>TodoList</title>
+  <meta charset="utf-8">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-fluid" ng-controller="TodoController">
+    <div class="App">
+      <h1>Get things done</h1>
+
+      <form class="todoForm" name="validateFieldValues">
+      <input class="formField addTask" type="text" ng-model="item.task" placeholder="Add New Task" required>
+      <button ng-hide="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="addItem()">
+       Add
+      </button>
+      <button ng-show="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="applyChanges()">
+      Save
+      </button>
+      </form>
+
+        <div ng-repeat="item in items" class="task-list comprado-{{ item.comprado }}">
+          <li class="myList">
+            {{ item.task }}
+            <div class="icon-buttons">
+            <button class="listBtn" ng-click="editItem($index)"><i class="far fa-edit"></i></button>
+            <button class="listBtn" ng-click="deleteItem($index)"><i class="far fa-trash-alt"></i></button>
+          </div>
+          </li>
+        </div>
+    </div>
+  </div>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="app/controllers.js"></script>
+</body>
+</html>
