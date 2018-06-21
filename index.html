@@ -17,12 +17,12 @@
       <button ng-hide="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="addItem()">
        Add
       </button>
-      <button ng-show="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="applyChanges()">
+      <button ng-show="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="saveChanges()">
       Save
       </button>
       </form>
 
-        <div ng-repeat="item in items" class="task-list comprado-{{ item.comprado }}">
+        <div ng-repeat="item in items" class="task-list">
           <li class="myList">
             {{ item.task }}
             <div class="icon-buttons">
@@ -35,7 +35,6 @@
   </div>
   <script src="lib/jquery.min.js"></script>
   <script src="lib/angular.min.js"></script>
-  <script src="lib/toastr.min.js"></script>
   <script src="app/controllers.js"></script>
 </body>
 </html>

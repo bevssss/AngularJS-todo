@@ -2,10 +2,7 @@ function TodoController($scope) {
 
     $scope.item = {};
 
-    $scope.items = [
-        // {task: 'Buy', done: false},
-        // {task: 'Debug', done: false}
-    ];
+    $scope.items = [];
 
     $scope.addItem = function () {
         $scope.items.push({task: $scope.item.task, done: false});
@@ -17,7 +14,7 @@ function TodoController($scope) {
         $scope.edit = true;
     };
 
-    $scope.applyChanges = function(index){
+    $scope.saveChanges = function(index){
         $scope.item = {};
         $scope.edit = false;
     };
