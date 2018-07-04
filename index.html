@@ -11,7 +11,6 @@
   <div class="container-fluid" ng-controller="TodoController">
     <div class="App">
       <h1>Get things done</h1>
-
       <form class="todoForm" name="validateFieldValues">
       <input class="formField addTask" type="text" ng-model="item.task" placeholder="Add New Task" required>
       <button ng-hide="edit" class="todoBtn" ng-disabled="validateFieldValues.$invalid" ng-click="addItem()">
@@ -21,7 +20,6 @@
       Save
       </button>
       </form>
-
         <div ng-repeat="item in items" class="task-list">
           <li class="myList">
             {{ item.task }}
@@ -33,8 +31,6 @@
         </div>
     </div>
   </div>
-
-  
   <script src="lib/jquery.min.js"></script>
   <script src="lib/angular.min.js"></script>
   <script src="app/controllers.js"></script>
